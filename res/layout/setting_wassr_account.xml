@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content" android:layout_width="fill_parent"
+	android:orientation="vertical">
+	<ScrollView android:id="@+id/ScrollView01"
+		android:layout_width="fill_parent" android:layout_height="fill_parent">
+		<TableLayout android:id="@+id/TableLayout01"
+			android:layout_height="fill_parent" android:layout_width="fill_parent"
+			android:layout_marginRight="5dip">
+			<TextView android:id="@+id/TextView01" android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="アカウント設定"
+				android:textSize="25dip"></TextView>
+			<TextView android:id="@+id/TextView02"
+				android:layout_height="wrap_content" android:layout_width="fill_parent"
+				android:text="ユーザー名"></TextView>
+			<EditText android:layout_height="wrap_content" android:id="@+id/id"
+				android:inputType="textEmailAddress" android:layout_width="fill_parent"></EditText>
+			<TextView android:id="@+id/TextView02"
+				android:layout_height="wrap_content" android:text="パスワード"
+				android:layout_width="fill_parent"></TextView>
+			<EditText android:layout_height="wrap_content"
+				android:inputType="textPassword" android:id="@+id/password"
+				android:layout_width="fill_parent"></EditText>
+			<CheckBox android:layout_width="wrap_content"
+				android:layout_height="wrap_content" android:text="パスワードを表示する"
+				android:id="@+id/showPassword"></CheckBox>
+			<Button android:layout_height="wrap_content" android:text="保存"
+				android:layout_width="wrap_content" android:id="@+id/saveButton"></Button>
+			<Button android:layout_height="wrap_content" android:text="キャンセル"
+				android:layout_width="wrap_content" android:id="@+id/cancelButton"></Button>
+		</TableLayout>
+	</ScrollView>
+</LinearLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Wasatter</string>
+	<string name="setup_wizard">Wasatter初期設定</string>
+	<string name="message_setup_wizard">Wasatterへようこそ。\nWasatterはWassr,Twitterに対応したマルチポストクライアントです。\n\nまず最初にサービス設定を行ってください。Wasatterを利用するには1つ以上のサービスを設定する必要があります。</string>
+	<string name="complete">完了</string>
+	<string name="no_service_added">1つ以上のサービスを設定してください。</string>
+	<string name="please_wait">しばらくお待ちください...</string>
+	<string name="cancelled">キャンセルされました。</string>
+	<string name="setting_saved">設定を保存しました。</string>
+	<string name="setting_completed">設定が完了しました。</string>
+	<string name="setting_failure">設定に失敗しました。もう一度やり直してください。</string>
+	<string name="setting_failure_cause_twitter">設定に失敗しました。Twitterが一時的に不調なようです。もう一度やり直してください。</string>
+	<string name="communication_failure">通信に失敗しました。電波状態の良いところでもう一度やり直してください。</string>
+	<string name="communication_failure_cause_twitter">通信に失敗しました。Twitterが一時的に不調なようです。もう一度やり直してください。</string>
+	<string name="please_input_id_and_pass_or_cancel">IDとパスワードは両方入力してください。設定しない場合は両方空白にしてください。</string>
+</resources>

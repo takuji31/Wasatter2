@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:padding="5dip" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:id="@+id/linearLayout2" android:layout_height="fill_parent" android:layout_width="fill_parent">
+        <LinearLayout android:id="@+id/linearLayout4" android:orientation="vertical" android:layout_height="wrap_content" android:layout_width="wrap_content">
+            <LinearLayout android:padding="1dip" android:background="#FFFFFF" android:id="@+id/linearLayout1" android:layout_marginRight="10dip" android:layout_marginLeft="10dip" android:layout_marginBottom="5dip" android:layout_marginTop="5dip" android:layout_height="34dip" android:layout_width="34dip">
+                <ImageView android:src="@drawable/tlicon_default" android:background="#000000" android:layout_width="32dip" android:id="@+id/imageView1" android:layout_height="32dip"></ImageView>
+            </LinearLayout>
+            <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center" android:text="Twitter" android:textSize="12sp" android:id="@+id/serviceName"></TextView>
+        </LinearLayout>
+        <LinearLayout android:id="@+id/linearLayout3" android:orientation="vertical" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_marginTop="5dip">
+            <TextView android:text="TextView" android:layout_height="wrap_content" android:textStyle="bold" android:layout_width="fill_parent" android:textSize="14sp" android:id="@+id/screenName"></TextView>
+            <TextView android:text="TextView Text	TextViewText	TextViewText	TextViewText	TextViewText	TextView" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_weight="1" android:textSize="12sp" android:id="@+id/statusText"></TextView>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

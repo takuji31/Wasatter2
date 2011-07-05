@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent" android:orientation="vertical">
+    <TextView android:layout_width="fill_parent" android:textSize="24sp" android:layout_height="wrap_content" android:id="@+id/textView1" android:layout_margin="10dip" android:text="@string/setup_wizard"></TextView>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/textView2" android:layout_margin="10dip" android:text="@string/message_setup_wizard"></TextView>
+    <TableLayout android:id="@+id/tableLayout1" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TableRow android:id="@+id/tableRow1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dip" android:layout_marginBottom="5dip">
+            <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_weight="1" android:text="Wassr" android:id="@+id/wassr"></Button>
+            <CheckBox android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/wassr_set" android:clickable="false" android:focusable="false"></CheckBox>
+        </TableRow>
+        <TableRow android:id="@+id/tableRow2" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="5dip" android:layout_marginBottom="5dip">
+            <Button android:layout_height="wrap_content" android:layout_weight="1" android:layout_width="wrap_content" android:id="@+id/twitter" android:text="Twitter"></Button>
+            <CheckBox android:layout_height="wrap_content" android:clickable="false" android:layout_width="wrap_content" android:id="@+id/twitter_set" android:focusable="false"></CheckBox>
+        </TableRow>
+    </TableLayout>
+    <LinearLayout android:layout_width="match_parent" android:id="@+id/linearLayout1" android:layout_height="fill_parent">
+        <Button android:layout_width="fill_parent" android:id="@+id/button_complete" android:text="@string/complete" android:layout_height="wrap_content" android:layout_marginTop="5dip" android:layout_gravity="bottom"></Button>
+    </LinearLayout>
+</LinearLayout>

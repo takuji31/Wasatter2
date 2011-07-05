@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent" android:layout_height="match_parent">
+    <FrameLayout android:id="@+id/frameLayout1" android:layout_height="fill_parent" android:layout_width="fill_parent">
+        <ListView android:layout_height="fill_parent" android:layout_width="fill_parent" android:id="@+id/timeline"></ListView>
+        <LinearLayout android:orientation="horizontal" android:id="@+id/linearLayout1" android:layout_width="fill_parent" android:layout_gravity="bottom" android:layout_height="wrap_content" android:background="#44000000">
+            <ImageButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/button_selector" android:id="@+id/postButton" android:layout_weight="1" android:src="@drawable/sym_action_chat"></ImageButton>
+            <ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/button_selector" android:src="@drawable/mension" android:id="@+id/replyButton"></ImageButton>
+            <ImageButton android:layout_weight="1" android:background="@drawable/button_selector" android:layout_height="wrap_content" android:src="@drawable/ic_popup_sync_1" android:layout_width="wrap_content" android:id="@+id/reloadButton"></ImageButton>
+            <ImageButton android:layout_weight="1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/button_selector" android:id="@+id/settingButton" android:src="@drawable/other"></ImageButton>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
