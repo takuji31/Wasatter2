@@ -28,6 +28,15 @@ public class Wasatter extends Application {
 	public static final String OAUTH_CALLBACK_URL = "wasatter://callback.twitter";
 	public static final int PREF_VERSION = 1;
 	public static final String VIA = "Wasatter";
+	
+	/**
+	 * Timeline type
+	 */
+	public static final int TIMELINE_FRIEND  = 1;
+	public static final int TIMELINE_REPLY   = 2;
+	public static final int TIMELINE_MYPOST  = 3;
+	public static final int TIMELINE_ODAI    = 4;
+	public static final int TIMELINE_MESSAGE = 5;
 
 	public RequestToken request_token;
 	public Twitter twitter;
