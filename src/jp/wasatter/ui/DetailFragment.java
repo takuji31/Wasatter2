@@ -1,12 +1,18 @@
 package jp.wasatter.ui;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.SpannableStringBuilder;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import jp.wasatter.R;
 import jp.wasatter.Wasatter;
@@ -14,6 +20,7 @@ import jp.wasatter.WasatterFragment;
 import jp.wasatter.item.TimelineItem;
 import jp.wasatter.item.WassrItem;
 import jp.wasatter.util.ImageDownloadHelper;
+import jp.wasatter.util.Setting;
 
 public class DetailFragment extends WasatterFragment {
 
@@ -27,7 +34,7 @@ public class DetailFragment extends WasatterFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.detail, container);
+		View v = inflater.inflate(R.layout.detail, container, false);
 
 		favoriteButton = (Button) v.findViewById(R.id.button_favorite);
 		TimelineItem item = app().selectedItem;
@@ -47,25 +54,26 @@ public class DetailFragment extends WasatterFragment {
 			// 画像をセット
 			ImageView icon = (ImageView) v.findViewById(R.id.icon);
 			Bitmap bmp = ImageDownloadHelper.getWithCache(item.profileImageUrl());
-			if (bmp != null && Setting.isLoadImage()) {
+			if (bmp != null && app().getPref(Setting.LOAD_IMAGE, false)) {
 				icon.setImageBitmap(bmp);
 				icon.setVisibility(View.VISIBLE);
 			} else {
-				icon.setVisibility(View.GONE);
+				icon.setImageResource(R.drawable.tlicon_default);
+				//icon.setVisibility(View.GONE);
 			}
 			// 返信であるかどうか判定
-			if (item.replyUserNick != null && !item.replyUserNick.equals("null")) {
+			if (item.replyUserNick() != null && !item.replyUserNick().equals("null")) {
 				TextView reply_message = (TextView) v
 						.findViewById(R.id.reply_text);
 				SpannableStringBuilder sb = new SpannableStringBuilder("by ");
-				sb.append(item.replyUserNick);
+				sb.append(item.replyUserNick());
 				TextView reply_user_name = (TextView) v
 						.findViewById(R.id.reply_user_name);
 				reply_user_name.setText(sb.toString());
-				if (item.replyMessage != null) {
+				if (item.replyUserMessage() != null) {
 					SpannableStringBuilder sb2 = new SpannableStringBuilder(
 							"> ");
-					sb2.append(item.replyMessage);
+					sb2.append(item.replyUserMessage());
 					reply_message.setText(sb2.toString());
 				}
 
@@ -82,7 +90,7 @@ public class DetailFragment extends WasatterFragment {
 				@Override
 				public void onClick(View v) {
 					// TODO 自動生成されたメソッド・スタブ
-					String permalink = Detail.this.item.link;
+					String permalink = DetailFragment.this.item.permaLink();
 					Intent intent_parmalink = new Intent(Intent.ACTION_VIEW,
 							Uri.parse(permalink));
 					startActivity(intent_parmalink);
@@ -96,22 +104,23 @@ public class DetailFragment extends WasatterFragment {
 				@Override
 				public void onClick(View v) {
 					// TODO 自動生成されたメソッド・スタブ
-					String text = Detail.this.item.text;
-					String url = Wasatter.getUrl(text);
+					String text = DetailFragment.this.item.text();
+					/*String url = Wasatter.getUrl(text);
 					if (!"".equals(url)) {
 						Intent intent_url = new Intent(Intent.ACTION_VIEW, Uri
 								.parse(url));
 						startActivity(intent_url);
-					} else {
+					} else { */
 						AlertDialog.Builder ad = new AlertDialog.Builder(
-								Detail.this);
+								DetailFragment.this.getActivity());
 						// ad.setTitle(R.string.notice_title_no_url);
-						ad.setMessage(R.string.notice_message_no_url);
+						ad.setMessage(R.string.dialog_url_not_found);
 						ad.setPositiveButton("OK", null);
 						ad.show();
-					}
+					//}
 				}
 			});
+			/*
 			// Favoriteボタンにイベント割り当て
 			Button button_favorite = (Button) v
 					.findViewById(R.id.button_favorite);
@@ -145,6 +154,7 @@ public class DetailFragment extends WasatterFragment {
 					startActivity(intent_reply);
 				}
 			});
+			*/
 		}
 		return v;
 	}

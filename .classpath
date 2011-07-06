@@ -13,7 +13,7 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/Wasatter2/lib/twitter4j-async-2.2.1-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/android-support-v4.jar"/>
+	<classpathentry kind="lib" path="lib/android-support-v4.jar" sourcepath="/android-sdk/extras/android/compatibility/v4/src/java"/>
 	<classpathentry kind="lib" path="lib/jdbm-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

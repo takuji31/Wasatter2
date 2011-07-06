@@ -2,7 +2,6 @@ package jp.wasatter.adapter;
 
 import java.util.ArrayList;
 
-import twitter4j.Status;
 import jp.wasatter.R;
 import jp.wasatter.item.TimelineItem;
 
