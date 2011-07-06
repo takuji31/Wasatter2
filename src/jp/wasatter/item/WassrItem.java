@@ -11,6 +11,12 @@ public class WassrItem implements TimelineItem{
 	public WassrItem(JSONObject json) {
 	}
 
+	@Override
+	public String serviceName() {
+		//TODO 外部リソース化
+		return "Wassr";
+	}
+	
 	public String screenName() {
 		return twitterStatus.getUser().getScreenName();
 	}

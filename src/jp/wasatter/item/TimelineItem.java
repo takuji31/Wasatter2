@@ -2,6 +2,7 @@ package jp.wasatter.item;
 
 public interface TimelineItem {
 
+	public String  serviceName();
 	public String  screenName();
 	public String  status_id();
 	public String  text();
