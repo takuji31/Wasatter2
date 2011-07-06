@@ -10,6 +10,12 @@ public class TwitterItem implements TimelineItem{
 		twitterStatus = status;
 	}
 
+	@Override
+	public String serviceName() {
+		//TODO 外部リソース化
+		return "Twitter";
+	}
+	
 	public String screenName() {
 		return twitterStatus.getUser().getScreenName();
 	}

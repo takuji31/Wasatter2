@@ -11,7 +11,7 @@ public class ImageDownloadHelper {
 		cache = new HashMap<String, String>();
 	}
 	
-	public Bitmap getWithCache(String url) {
+	public static Bitmap getWithCache(String url) {
 		
 		return null;
 	}

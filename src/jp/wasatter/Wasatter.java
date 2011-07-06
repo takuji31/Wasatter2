@@ -6,6 +6,7 @@ package jp.wasatter;
 import java.io.File;
 
 import jp.wasatter.client.WassrClient;
+import jp.wasatter.item.TimelineItem;
 
 import twitter4j.Twitter;
 import twitter4j.TwitterFactory;
@@ -42,6 +43,8 @@ public class Wasatter extends Application {
 	public Twitter twitter;
 	public SharedPreferences pref;
 	public WassrClient wassr;
+	
+	public TimelineItem selectedItem;
 
 	@Override
 	public void onCreate() {
