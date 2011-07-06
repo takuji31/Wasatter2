@@ -38,10 +38,4 @@ public class TimelineAdapter extends ArrayAdapter<TimelineItem>  {
 		screenName.setText(item.screenName());
 		return view;
 	}
-
-	
-	public void updateView() {
-		// TODO 自動生成されたメソッド・スタブ
-		super.notifyDataSetChanged();
-	}
 }
