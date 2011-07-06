@@ -49,7 +49,7 @@ public class Wasatter extends Application {
 		pref = PreferenceManager.getDefaultSharedPreferences(this);
 		if (getPref("pref_version", 0) == 0) {
 			// Ver1からの設定データーは全部消す
-			pref.edit().clear().commit();
+			clearPref();
 			// キャッシュとかDBも消すよ
 			deleteDatabase("imagestore.db");
 			SpannableStringBuilder sb = new SpannableStringBuilder();
